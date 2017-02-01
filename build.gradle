@@ -1,5 +1,20 @@
-apply plugin: "groovy"
-apply plugin: "maven-publish"
+plugins {
+    id "com.gradle.plugin-publish" version "0.9.7"
+}
+
+pluginBundle {
+    website = "https://github.com/pivotal-education/hugo-course"
+    vcsUrl = "https://github.com/pivotal-education/hugo-course"
+    description = "Hugo course deploy plugin"
+    tags = ['hugo']
+
+    plugins {
+        greetingsPlugin {
+            id = 'io.pivotal.hugo-course'
+            displayName = 'Hugo Course Plugin'
+        }
+    }
+}
 
 repositories {
     maven {
@@ -7,8 +22,11 @@ repositories {
     }
 }
 
+apply plugin: "groovy"
+apply plugin: "maven-publish"
+
 group = "io.pivotal"
-version = "1.0-SNAPSHOT"
+version = "1.0-RELEASE"
 
 dependencies {
     compile gradleApi()
