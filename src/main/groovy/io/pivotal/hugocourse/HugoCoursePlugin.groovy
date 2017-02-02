@@ -165,6 +165,11 @@ class HugoCoursePlugin implements Plugin<Project> {
 
         project.task("buildArchive", type: Zip, dependsOn: [project.tasks.buildSite, project.tasks.cleanCourse]) {
             from project.file(tmpDirectory)
+
+            doFirst {
+                into project.hugoCourse.name
+            }
+
             include '**/*'
             destinationDir project.file(buildDirectory)
 

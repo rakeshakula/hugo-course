@@ -9,7 +9,7 @@ pluginBundle {
     tags = ['hugo']
 
     plugins {
-        greetingsPlugin {
+        hugoCoursePlugin {
             id = 'io.pivotal.hugo-course'
             displayName = 'Hugo Course Plugin'
         }
@@ -26,7 +26,7 @@ apply plugin: "groovy"
 apply plugin: "maven-publish"
 
 group = "io.pivotal"
-version = "1.0-RELEASE"
+version = "1.0.1-RELEASE"
 
 dependencies {
     compile gradleApi()
